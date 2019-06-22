@@ -1,0 +1,54 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+
+{% block script %}
+{%endblock%}
+
+
+{%block title%}start{%endblock%}
+
+
+{% block head %}
+<div class="head">
+    <h1>
+        0.던전 입구
+    </h1>
+</div>
+{% endblock%}
+
+
+
+{%block content%}
+
+
+<div class="content">
+    <img src="{% static 'img/cave.jpg' %}" alt="이미지오류" style="width: 500px">
+        <li class="story">
+            <ul>칙칙한 동굴에 들어가보니 사람의 흔적이 보인다</ul>
+            <ul>아니.. 지적 생명체라고 보는게 맞을까</ul>
+            <ul>순간 조그마한 그림자들이 빠르게 움직인다</ul>
+            <br>
+            <br>
+            <br>
+            <ul style="color: black">1, 1, 2, 3 ...</ul>
+            <ul>어.....어어어!</ul>
+            <ul>천장위에 누가봐도 함정인 금화들이 춤을 추기 시작한다</ul>
+            <br>
+            <br>
+            <br>
+            <br>
+            <ul style="color: red">갑자기 카지노에서 친구가 나에게 말해줬던 이야기가 생각이난다.</ul>
+        </li>
+    </div>  
+
+<form class='form' action="{% url 'dungeon:start'%}" method="POST">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit",name='입력'>
+    </form>
+    {% if flag %}
+    <div id="some_flag" title="Some Flag">
+        <p>틀렸습니다</p>
+    </div>
+    {% endif %}
+{%endblock%}

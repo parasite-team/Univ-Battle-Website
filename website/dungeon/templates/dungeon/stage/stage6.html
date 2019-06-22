@@ -1,0 +1,77 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+
+{% block script %}
+{%endblock%}
+
+
+{%block title%}stage6{%endblock%}
+
+{% block head %}
+<div class="head">
+    <h1>
+        6.인생이란 무엇일까
+    </h1>
+</div>
+{% endblock%}
+
+
+
+{%block content%}
+
+
+<div class="content">
+        <li class="story">
+            <img src="{%static 'img/thinking.jpg'%}" alt="이미지오류" style="width:500px">
+            <ul>갑자기 슬퍼졌다..</ul>
+            <ul>갑자기 내 인생을 되돌아 보게되었다..</ul>
+            <br>
+            <br>
+            <br>
+            <ul>내 기억속으로 들어간다.</ul>
+            <ul>.</ul>
+            <ul>.</ul>
+            <ul>.</ul>
+            <ul style="color: red">야! 찐따 주제에 까불지 말라고!</ul>
+            <ul>.</ul>
+            <ul>.</ul>
+            <ul>.</ul>
+            <ul>.</ul>
+            <ul style="color:red">마비킥! 이이잉 기모링</ul>
+            <ul>.</ul>
+            <ul>.</ul>
+            <ul>.</ul>
+            <ul>암담하다..</ul>
+            <ul>괜히 기분만 짜증나게 되었다.</ul>
+            <ul>빨리 다음단계로 넘어가자.</ul>
+            <br>
+            <br>
+            <br>
+            <br>
+            <ul>...어?</ul>
+            <ul>내 기억속에 갇히게 되었다.</ul>
+            <ul>갑자기 눈 앞에 거대한 문자가 보인다</ul>
+            <br>
+            <br>
+            <ul style="color: red">문제: 이 생명체는 현대에 와서 꼬리가 점점 퇴화하고 있다.</ul>
+            <ul style="color: red">이녀석은 창문을 닦기에 용이하다</ul>
+            <ul>.</ul>
+            <ul>.</ul>
+            <ul>.</ul>
+            <ul>이녀석...지구에 놀러온 외계인이다</ul>
+        </li>
+    </div>
+    
+
+
+<form class='form' action="{% url 'dungeon:stage6'%}" method="POST">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit",name='입력'>
+    </form>
+    {% if flag %}
+    <div id="some_flag" title="Some Flag">
+        <p>틀렸습니다</p>
+    </div>
+    {% endif %}
+{%endblock%}

@@ -1,0 +1,51 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+{% block script %}
+{% endblock %}
+
+
+{%block title%} main {% endblock%}
+
+{% block head %}
+<div class="head">
+    <h1>
+        던전에 오신 탐험가 분들을 환영합니다!
+    </h1>
+</div>
+{% endblock%}
+
+
+
+
+{%block content%}
+<div class="content">
+    <li class="story">
+        <ul>저희는 특별히 엄선하여 탐험가 분들을 선별하였습니다</ul>
+        <ul>탐험가 분들은 미개척지인 던전에 들어가 총 8스테이지를 클리어 하셔야합니다</ul>
+        <ul>던전안에는 온갖 함정과 숨겨진 보물들이 득실대니 마음껏 즐겨주시길 바랍니다</ul>
+        <ul>조심하세요! 던전안에는 무서운 괴물이 숨어있다고 합니다.</ul>
+        <img src="{% static 'img/keyisstart.jpg' %}" alt="이미지오류" style="width:500px">
+    </li>
+    <li class="rules">
+        <h3>규칙을 설명해드리겠습니다</h3>
+        <ul>정답란에 정답을 입력해주세요</ul>
+        <ul>가능한 모든 수단을 이용해주세요</ul>
+        <ul>띄어쓰지 말아주세요</ul>
+        <ul>소문자로 정답을 입력해주세요</ul>
+        <ul>정답을 맞추신 분들은 절대로 정답을 유포하지 말아주세요</ul>
+        <ul>그럼 무운을 빕니다!</ul>
+        <ul style="font-size: smaller; color:slategray;">만든이:gadamer</ul>
+    </li>
+
+    <form class='form' action="{% url 'dungeon:main'%}" method="POST">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit",name='입력'>
+    </form>
+    {% if flag %}
+    <div id="some_flag" title="Some Flag">
+        <p>틀렸습니다</p>
+    </div>
+    {% endif %}
+</div>
+{%endblock%}

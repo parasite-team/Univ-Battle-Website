@@ -1,0 +1,61 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+
+{% block script %}
+{%endblock%}
+
+
+{%block title%}stage5{%endblock%}
+
+
+{% block head %}
+<div class="head">
+    <h1>
+        5.사람은 사랑을 하지... 그런데
+    </h1>
+</div>
+{% endblock%}
+
+
+{%block content%}
+
+
+<div class="content">
+        <li class="story">
+            <img src="{%static 'img/love.jpg' %}" alt="이미지오류" style="width:500px">
+            <ul>에스컬레이터를 작동시켜 올라가 보니 불이 갑자기 켜졌다.</ul>
+            <br>
+            <ul>깜짝이야!!!</ul>
+            <ul>당황스러운 나머지 소리를 질렀다..</ul>
+            <br>
+            <br>
+            <ul style="color: black"> I have never been in love</ul>
+            <ul style="color:red">흑...흑</ul>
+            <ul>갑자기 우는 소리가 들려온다</ul>
+            <ul>......</ul>
+            <br>
+            <br>
+            <ul>더더욱 집에 가고싶어진다..</ul>
+            <ul>이것도 문제겠지? 빨리 벗어나야겠다..</ul>
+            <ul>그래서 힌트는 어디있지?</ul>
+            <ul>응?</ul>
+            <br>
+            <br>
+            <br>
+            <ul>힌트는 어디있는 거야!</ul>
+        </li>
+    </div>
+    
+
+
+<form class='form' action="{% url 'dungeon:stage5'%}" method="POST">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit",name='입력'>
+    </form>
+    {% if flag %}
+    <div id="some_flag" title="Some Flag">
+        <p>틀렸습니다</p>
+    </div>
+    {% endif %}
+{%endblock%}

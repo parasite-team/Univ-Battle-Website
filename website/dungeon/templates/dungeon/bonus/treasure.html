@@ -1,0 +1,30 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+
+{% block script %}
+{%endblock%}
+
+
+{%block title%}last{%endblock%}
+
+
+{% block head %}
+<div class="head">
+    <h1>
+        보물방
+    </h1>
+</div>
+{% endblock%}
+
+
+{%block content%}
+
+<div class="content">
+    <li class="story">
+        <img src="{%static 'img/treasure.jpg'%}" alt="이미지오류" style="width:500px" title="V1hwT1YyRnNhM2xXYm5CcVpIb3dPUT09">
+        <ul style="color: royalblue">와!!!!!</ul>
+        <ul>드디어 ... 보물이 내손안에!</ul>
+        <ul>이 보물을 이제 들고가자!</ul>
+    </li>
+</div>
+{%endblock%}

@@ -1,0 +1,53 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+
+{% block script %}
+{%endblock%}
+
+
+{%block title%}stage2{%endblock%}
+
+
+
+{% block head %}
+<div class="head">
+    <h1>
+        2.내가 모르던 새로운 세계
+    </h1>
+</div>
+{% endblock%}
+
+
+{%block content%}
+
+
+<div class="content">
+        <li class="story">
+            <img src="{% static 'img/new.jpg'%}" alt="이미지오류" style="width:500px">
+            <ul>응? 여기는 바다잖아!</ul>
+            <ul>순간 여기가 지구가 아니라는 생각이 들기 시작했다.</ul>
+            <br>
+            <br>
+            <br>
+            <ul>.....</ul>
+            <ul>괜히 초대에 응한건가..</ul>
+            <ul>빨리 이곳에서 벗어나고 싶어!</ul>
+            <ul>그러자 내 눈앞에 펼쳐지는 작은 글자</ul>
+            <ul style="color: red">잘못된 공간에 왔습니다. 다시 시작하세요. "초심을 잃지 마세요"</ul>
+            <ul>일단 내가 있어야 되는 곳으로 돌아가자</ul>
+            
+        </li>
+    </div>
+    
+
+<form class='form' action="{% url 'dungeon:stage2'%}" method="POST">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit",name='입력'>
+    </form>
+    {% if flag %}
+    <div id="some_flag" title="Some Flag">
+        <p>틀렸습니다</p>
+    </div>
+    {% endif %}
+{%endblock%}

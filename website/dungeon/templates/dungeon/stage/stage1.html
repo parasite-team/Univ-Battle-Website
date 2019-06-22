@@ -1,0 +1,65 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+
+{% block script %}
+{%endblock%}
+
+
+{%block title%}last{%endblock%}
+
+
+{% block head %}
+<div class="head">
+    <h1>
+        1.벌써부터 머리가 지끈지끈!
+    </h1>
+</div>
+{% endblock%}
+
+
+{%block content%}
+
+<div class="content">
+    <li class="story">
+        <img src="{% static 'img/enigma.jpg'%}" alt="이미지오류" style="width: 500px">
+        <ul>드디어 시작인건가..</ul>
+        <br>
+        <ul>하늘을 올려다보니 커다란 구멍이 보인다</ul>
+        <ul>재밌는 곳이군..</ul>
+        <ul>근데 어디로 가야되는 거지?</ul>
+        <ul>....</ul>
+        <br>
+        <br>
+        <br>
+        <ul>구멍위에서 종이한장이 떨어졌다</ul>
+        <br>
+        <br>
+        <br>
+        <ul>아니? 사람이 있는건가 위에?</ul>
+        <br>
+        <br>
+        <ul>인기척은 보이지 않는다..</ul>
+        <ul>..</ul>
+        <ul>..</ul>
+        <ul>종이를 유심히 들여다 보았다.</ul>
+        <ul style="color:red">WjI5dlpHcHZZZz09</ul>
+        <ul>...너무 쉽잖아!</ul>
+        <ul>정답을 외치니 기분나쁜 빛이 내 몸을 감싼다</ul>
+        <ul>어어어어어어어엇!</ul>
+    </li>
+</div>
+
+
+
+<form class='form' action="{% url 'dungeon:stage1'%}" method="POST">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit",name='입력'>
+    </form>
+    {% if flag %}
+    <div id="some_flag" title="Some Flag">
+        <p>틀렸습니다</p>
+    </div>
+    {% endif %}
+
+{%endblock%}

@@ -1,0 +1,67 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+
+{% block script %}
+{%endblock%}
+
+
+{%block title%}stage1{%endblock%}
+
+
+{% block head %}
+<div class="head">
+    <h1>
+        마지막 스테이지-> 무엇을 말하는 걸까?
+    </h1>
+</div>
+{% endblock%}
+
+
+
+{%block content%}
+
+
+<div class="content">
+        <li class="story">
+            <img src="{% static 'img/artist.jpg'%}" alt="이미지오류" style="width: 500px">
+            <ul>계단위를 올라보니 예전 금고로 썼던 던전이 보인다..</ul>
+            <br>
+            <br>
+            <br>
+            <ul>하염없이 방안을 걸어보지만 출구는 보이지가 않는다</ul>
+            <ul>.....</ul>
+            <ul>털썩!</ul>
+            
+            <ul>그자리에 주저앉아 잠깐 목을 축일까 한다.</ul>
+            <ul>그러자 오른손이 어떤 작은 글씨를 가리고 있다.</ul>
+            <br>
+            <br>
+            <ul>이게뭐지?</ul>
+            <ul style='color:red'>May 9, 1877 - February 13, 1966. The Silent order  </ul>
+            <ul>앗 ... 이건 사람인데..흠...이건 '그사람'이잖아!</ul>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <ul>갑자기 작은 글씨가 빛나더니 영롱해진다... 나를 다른 차원으로 인도한다.</ul>
+        </li>
+    </div>
+    
+<!--
+hint:
+name : xxxxxx  pushman
+he is artist 
+-->
+
+<form class='form' action="{% url 'dungeon:last_stage'%}" method="POST">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit",name='입력'>
+    </form>
+    {% if flag %}
+    <div id="some_flag" title="Some Flag">
+        <p>틀렸습니다</p>
+    </div>
+    {% endif %}
+{%endblock%}
