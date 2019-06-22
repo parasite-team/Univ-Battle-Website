@@ -57,7 +57,7 @@ def stage3(request):
     if request.method=='POST':
         form = inputAnswer(request.POST)
         if form.is_valid():
-            if form.cleaned_data['answer']=='5':
+            if form.cleaned_data['answer']=='57':
                 return redirect('dungeon:stage4')   
             else:
                 return render(request,'dungeon/stage/stage3.html',{'form':form,'flag':True})
